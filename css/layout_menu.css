@@ -1,0 +1,63 @@
+
+    	.navbar-header{ 
+			border:none !important;
+			font-family: 'thaisans_neueregular' !important;
+			margin-top:60px;
+		}
+		.navbar-brand{
+			color:#fff5de !important;
+			}
+		.navbar-toggle{
+			padding:5px !important;
+			background-color:#ccc !important;
+			border:none !important;
+			margin-top:3px;
+			margin-bottom:3px;
+			left:0 !important;
+			margin-left:0 !important;
+			}
+		.navbar-toggle .icon-bar{
+			width:15px !important; height:1px !important;
+			}
+	    .navbar-default .navbar-toggle .icon-bar{
+			background-color:#fff;
+			}
+		.navbar-default{ background:none !important; border:none !important; box-shadow:none !important;}
+		.navbar-default .navbar-collapse, .navbar-default .navbar-form{ border:none !important;}
+		.navbar{ min-height:20px !important; padding-top:0 !important;}
+		.navbar-default .navbar-nav > li > a{ color:#000; font-size:14px; margin-left:30px; padding:0;}
+		.dropdown-menu{ font-size:13px; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;padding:8px; right:0; left:auto; text-align:right;}
+		.dropdown-menu li a{ padding:10px;}
+		.dropdown-menu li{ border-bottom:1px solid #eaeaea;}
+		.navbar-nav{ float:right; text-align:right;}
+		.collapse navbar-collapse{padding:0;}
+		.navbar-collapse{ padding:0; clear:both;}
+		.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+			color:#4f91cd;
+			background:none;
+			box-shadow:none;
+		}
+@media (max-width: 767px) {
+  	.navbar-nav > li > .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+	text-align:left;
+  }
+  .navbar-nav .dropdown-menu > li > a,
+  .navbar-nav .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .navbar-nav > li > .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .navbar-nav .dropdown-menu > li > a:hover,
+  .navbar-nav .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}

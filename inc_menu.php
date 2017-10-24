@@ -61,8 +61,10 @@
     background-image: none;
   }
 }
-    </style>
-    
+
+</style>
+
+        
     
 <div class="row">
     <div class="col-xs-12 col-sm-5 col-md-6">
@@ -73,7 +75,9 @@
     
     <div class="col-xs-12 col-sm-7 col-md-6 txt_thaisan">
 
-
+<?php
+if(isset($_SESSION["s_id"]) && $_SESSION["s_id"] >0){
+?>
             <nav id="myNavbar" class="navbar navbar-default" role="navigation">
                 <!-- Brand and toggle get grouped for better mobile display -->
                
@@ -84,41 +88,103 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                        	<li><a href="home.php">หน้าหลัก</a></li>
+                        	<li><a href="main.php">หน้าแรก</a></li>
+<?php
+if($_SESSION["s_staff"] == 1){ //super admin
+?>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">เมนู<b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">สำนักงานเขต</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="aboutus_history.php">เมนู</a></li>
-                                    <li><a href="aboutus_vision.php">เมนู</a></li>
-                                    <li><a href="aboutus_board.php">เมนู</a></li>
-                                    <li><a href="aboutus_management_structure.php">เมนู</a></li>
+                                    <li><a href="mgr_limit.php">จัดการสำนักงานเขต</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">เมนู <b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้ใช้งาน</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="service_law.php">เมนู</a></li>
-                                    <li><a href="service_dataservice.php">เมนู</a></li>
-                                    <li><a href="service_stat.php">เมนู</a></li>
-                                    <li><a href="service_datatransfer.php">เมนู</a></li>
-                                    <li><a href="service_multiphoto.php">เมนู</a></li>
+                                    <li><a href="mgr_super.php">จัดการ Super Admin</a></li>
+                                    <li><a href="mgr_admin.php">จัดการ Admin</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">เมนู<b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ธนาคาร</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="knowledge_dataservice.php">เมนู</a></li>
-                                    <li><a href="knowledge_dataknowledge.php">เมนู</a></li>
-                                    <li><a href="knowledge_article.php">เมนู</a></li>
-                                    <li><a href="knowledge_research.php">เมนู</a></li>
-                                    <li><a href="knowledge_magazine.php">เมนู</a></li>
-                                    <li><a href="knowledge_notable.php">เมนู</a></li>
+                                    <li><a href="#">จัดการธนาคาร</a></li>
                                 </ul>
                             </li>
+							<li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">อัตราเบี้ยผู้พิการ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">จัดการอัตราเบี้ยผู้พิการ</a></li>
+                                </ul>
+                            </li>
+<?php
+}else if($_SESSION["s_staff"] == 2){ //admin
+?>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้ใช้งาน</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">จัดการผู้ใช้งาน</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ข้อมูลผู้พิการ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">รายชื่อผู้ลงทะเบียนในแต่ละปี</a></li>
+                                    <li><a href="#">ประกาศรายชื่อผู้มีสิทธิ</a></li>
+                                    <li><a href="#">รายชื่อผู้รับเงินสดด้วยตนเอง</a></li>
+                                    <li><a href="#">รายชื่อผู้รับเงินผ่านธนาคาร</a></li>
+                                    <li><a href="#">รายชื่อผู้แทนรับเงินสด</a></li>
+                                    <li><a href="#">รายชื่อผู้แทนรับเงินผ่านธนาคาร</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">รายงานผู้พิการ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">รายงานการแจ้งความจำนงรับเบี้ยผู้พิการ</a></li>
+                                    <li><a href="#">รายงานการโอนเงินเข้าบัญชีเงินฝากธนาคาร</a></li>
+                                    <li><a href="#">รายงานการรับเงินผู้มีสิทธิรับเบี้ยผู้พิการ</a></li>
+                                    <li><a href="#">รายงานการตาย</a></li>
+                                    <li><a href="#">รายงานการรับเงินสด</a></li>
+                                    <li><a href="#">รายงานการรับเงินเบี้ยผู้พิการ</a></li>
+                                    <li><a href="#">รายงานการรับเงินตามพินัยกรรม</a></li>
+                                    <li><a href="#">รายงานสรุปยอดผู้รับเงินส่งผู้บริหาร</a></li>
+                                    <li><a href="#">รายงานการจ่ายเงินรายเดือน</a></li>
+                                    <li><a href="#">รายงานการจ่ายเงินรายใหม่</a></li>
+                                </ul>
+                            </li>
+<?php
+}else if($_SESSION["s_staff"] == 3){ //user
+?>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้ยื่นคำขอ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">จัดการข้อมูลผู้ยื่นคำขอ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้รับมอบอำนาจ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">จัดการข้อมูลผู้รับมอบอำนาจ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้พิการ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">จัดการข้อมูลผู้พิการ</a></li>
+                                    <li><a href="#">จัดการข้อมูลผู้พิการสละสิทธิ์</a></li>
+                                    <li><a href="#">จัดการข้อมูลผู้พิการเสียชีวิต</a></li>
+                                </ul>
+                            </li>
+<?php
+}//end user
+?>
+                            <li><a href="logout.php">ออกจากระบบ</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
             </nav>
-
+<?php
+}
+?>
           
   </div>
         </div>
