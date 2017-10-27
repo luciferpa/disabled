@@ -36,6 +36,7 @@
 				$_SESSION["s_name"] = $row["user_name"].' '.$row["user_surname"];
 				$_SESSION["s_staff"] = $row["staff_id"];
 				$_SESSION["s_staff_name"] = $row["staff_name"];
+				$_SESSION["s_limit_id"] = $row["l_id"];
 
 				echo '<meta  http-equiv="refresh" content="0;url=main.php">';	 
 							

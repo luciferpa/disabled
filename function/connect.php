@@ -1,15 +1,15 @@
 <?php
 //local
-/*$host="localhost";
+$host="localhost";
 $user="root";
 $pw="";
-$dbname="disabled_db";*/
+$dbname="disabled_db";
 
 //server 
-$host="localhost";
+/*$host="localhost";
 $user="bestshow_disabled";
 $pw="12345678";
-$dbname="bestshow_disabled";
+$dbname="bestshow_disabled";*/
 
 
 $c=mysql_connect($host, $user, $pw);

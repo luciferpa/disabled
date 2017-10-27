@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-10-13 12:06:31
+Date: 2017-10-24 07:44:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1161,22 +1161,6 @@ CREATE TABLE `disability` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for limit
--- ----------------------------
-DROP TABLE IF EXISTS `limit`;
-CREATE TABLE `limit` (
-  `l_id` int(11) NOT NULL AUTO_INCREMENT,
-  `l_code` varchar(255) DEFAULT NULL,
-  `l_name` varchar(255) DEFAULT NULL,
-  `l_status` varchar(2) DEFAULT '1',
-  PRIMARY KEY (`l_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of limit
--- ----------------------------
-
--- ----------------------------
 -- Table structure for logfile
 -- ----------------------------
 DROP TABLE IF EXISTS `logfile`;
@@ -1201,7 +1185,7 @@ DROP TABLE IF EXISTS `logonuser`;
 CREATE TABLE `logonuser` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id_card` varchar(255) DEFAULT NULL,
-  `user_isstaff` varchar(255) DEFAULT NULL,
+  `staff_id` int(255) DEFAULT NULL,
   `user_title` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   `user_surname` varchar(255) DEFAULT NULL,
@@ -1211,11 +1195,17 @@ CREATE TABLE `logonuser` (
   `user_pass` varchar(255) DEFAULT NULL,
   `user_status` varchar(2) DEFAULT '1',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of logonuser
 -- ----------------------------
+INSERT INTO `logonuser` VALUES ('1', '123456789123', '1', 'นาย', 'programmer', 'superadmin', '1', '0811111111', 'sadmin', '1234', '1');
+INSERT INTO `logonuser` VALUES ('2', '123456789124', '2', 'นางสาว', 'admin', 'testtest', '2', '025556699', 'admin', '1234', '1');
+INSERT INTO `logonuser` VALUES ('3', '123456789125', '3', 'นาง', 'คำมี', 'ศรีสุขใจ', '2', '025556699', 'user', '1234', '1');
+INSERT INTO `logonuser` VALUES ('4', '5556669998887', '1', 'นางสาว', 'เบญจมาศ', 'ชูโต', '5', '0698855223', 'www@www.com', '1234', '1');
+INSERT INTO `logonuser` VALUES ('5', '6665559998887', '1', 'นาง', 'ยุวดี', 'ขาวจันทร์', '3', '0598887744', 'www2@www.com', '1234', '1');
+INSERT INTO `logonuser` VALUES ('6', '2223336665558', '2', 'นาย', 'ชัยวัฒน์', 'ทองดี', '5', '0589998877', 'dfas@swer.com', '1234', '1');
 
 -- ----------------------------
 -- Table structure for money_rate
@@ -1381,6 +1371,50 @@ INSERT INTO `province` VALUES ('74', '94', 'ปัตตานี   ', 'Pattani'
 INSERT INTO `province` VALUES ('75', '95', 'ยะลา   ', 'Yala', '6');
 INSERT INTO `province` VALUES ('76', '96', 'นราธิวาส   ', 'Narathiwat', '6');
 INSERT INTO `province` VALUES ('77', '97', 'บึงกาฬ', 'buogkan', '3');
+
+-- ----------------------------
+-- Table structure for staff_type
+-- ----------------------------
+DROP TABLE IF EXISTS `staff_type`;
+CREATE TABLE `staff_type` (
+  `staff_id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_name` varchar(255) DEFAULT NULL,
+  `staff_status` varchar(2) DEFAULT '1',
+  PRIMARY KEY (`staff_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of staff_type
+-- ----------------------------
+INSERT INTO `staff_type` VALUES ('1', 'super admin', '1');
+INSERT INTO `staff_type` VALUES ('2', 'admin', '1');
+INSERT INTO `staff_type` VALUES ('3', 'user', '1');
+
+-- ----------------------------
+-- Table structure for tb_limit
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_limit`;
+CREATE TABLE `tb_limit` (
+  `l_id` int(11) NOT NULL AUTO_INCREMENT,
+  `l_code` varchar(255) DEFAULT NULL,
+  `l_name` varchar(255) DEFAULT NULL,
+  `l_status` varchar(2) DEFAULT '1',
+  PRIMARY KEY (`l_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_limit
+-- ----------------------------
+INSERT INTO `tb_limit` VALUES ('1', '00', 'ส่วนกลาง', '1');
+INSERT INTO `tb_limit` VALUES ('2', '01', 'คลองเตย', '1');
+INSERT INTO `tb_limit` VALUES ('3', '02', 'คลองสาน', '1');
+INSERT INTO `tb_limit` VALUES ('4', '03', 'ยานนาวา', '1');
+INSERT INTO `tb_limit` VALUES ('5', '04', 'ราชเทวี', '1');
+INSERT INTO `tb_limit` VALUES ('6', '', '', '0');
+INSERT INTO `tb_limit` VALUES ('7', '', '', '0');
+INSERT INTO `tb_limit` VALUES ('8', 'f', 'u', '0');
+INSERT INTO `tb_limit` VALUES ('9', '0055', '69s5sdfda', '0');
+INSERT INTO `tb_limit` VALUES ('10', '05', 'พญาไท', '1');
 
 -- ----------------------------
 -- Table structure for title

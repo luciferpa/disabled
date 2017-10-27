@@ -108,13 +108,13 @@ if($_SESSION["s_staff"] == 1){ //super admin
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">ธนาคาร</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">จัดการธนาคาร</a></li>
+                                    <li><a href="mgr_bank.php">จัดการธนาคาร</a></li>
                                 </ul>
                             </li>
 							<li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">อัตราเบี้ยผู้พิการ</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">จัดการอัตราเบี้ยผู้พิการ</a></li>
+                                    <li><a href="mgr_rate.php">จัดการอัตราเบี้ยผู้พิการ</a></li>
                                 </ul>
                             </li>
 <?php
@@ -123,7 +123,7 @@ if($_SESSION["s_staff"] == 1){ //super admin
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">ผู้ใช้งาน</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">จัดการผู้ใช้งาน</a></li>
+                                    <li><a href="mgr_user.php">จัดการผู้ใช้งาน</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
